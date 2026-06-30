@@ -41,6 +41,14 @@ class PdfReader:
 
     def extract_small_portion_of_the_pdf(self, min=0, max=None):
         '''
+        Extracts a slice/portion of the normalized text.
+
+        Args:
+            min (int): Starting character index (default: 0).
+            max (int): Ending character index (default: None).
+
+        Returns:
+            str: The sliced text.
         '''
         if self.pages_text == "":
             self.extract_text()
@@ -48,6 +56,10 @@ class PdfReader:
 
     def get_paragraph(self):
         '''
+        Splits the text by newline characters into paragraphs.
+
+        Returns:
+            list[str]: A list of non-empty, stripped paragraphs.
         '''
         if self.pages_text == "":
             self.extract_text()
